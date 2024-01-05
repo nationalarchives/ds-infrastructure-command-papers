@@ -59,8 +59,23 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
     }
 
     tags = merge( var.tags, {
-        "Name"        = var.cognito_user_pool_name
+        "Name" = var.cognito_user_pool_name
     })
+}
+
+resource "aws_cognito_user_pool_domain" "user_pool" {
+    certificate_arn = var.certificate_arn
+    domain       = var.cognito_user_pool_name
+    user_pool_id = aws_cognito_user_pool.cognito_user_pool.id
+}
+
+resource "aws_cognito_user_pool_ui_customization" "user_pool_ui" {
+    client_id = aws_cognito_user_pool_client.user_pool_client.id
+
+    css        = file("${path.module}/ui/client.css")
+    image_file = filebase64("${path.module}/ui/logo.png")
+
+    user_pool_id = aws_cognito_user_pool_domain.user_pool.id
 }
 
 resource "aws_cognito_user_pool_client" "user_pool_client" {
@@ -124,4 +139,15 @@ resource "aws_cognito_user_group" "tna_group" {
     name         = "CMDP_TNA"
     user_pool_id = aws_cognito_user_pool.cognito_user_pool.id
     description  = "TNA users"
+}
+
+resource "aws_cognito_user_pool_ui_customization" "cp_cognito" {
+    client_id = aws_cognito_user_pool_client.user_pool_client.id
+
+    css        = ".label-customizable {font-weight: 400;}"
+    image_file = filebase64("logo.png")
+
+    # Refer to the aws_cognito_user_pool_domain resource's
+    # user_pool_id attribute to ensure it is in an 'Active' state
+    user_pool_id = aws_cognito_user_pool_domain.example.user_pool_id
 }

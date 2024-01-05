@@ -15,5 +15,7 @@ module "cp-cognito" {
     ses_sysdev_arn   = var.ses_sysdev_arn
     ses_sysdev_email = var.ses_sysdev_email
 
+    certificate_arn = data.aws_ssm_parameter.cp_certificate_arn.value
+
     tags = var.tags
 }

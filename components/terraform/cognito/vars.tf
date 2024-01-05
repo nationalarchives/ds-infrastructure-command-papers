@@ -8,3 +8,5 @@ variable "commandpapers_logout_url" {}
 
 variable "ses_sysdev_arn" {}
 variable "ses_sysdev_email" {}
+
+variable "certificate_arn" {}
