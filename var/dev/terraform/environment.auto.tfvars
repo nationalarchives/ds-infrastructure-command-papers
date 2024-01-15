@@ -11,5 +11,5 @@ default_tags = {
     terraform   = "true"
 }
 
-user_pool_url = "dev-auth-commandpapers.nationalarchives.gov.uk"
-app_url       = "dev-commandpapers.nationalarchives.gov.uk"
+user_pool_domain = "dev-auth-commandpapers.nationalarchives.gov.uk"
+app_url          = "dev-commandpapers.nationalarchives.gov.uk"
