@@ -73,7 +73,7 @@ resource "aws_cognito_user_pool_ui_customization" "user_pool_ui" {
     client_id = aws_cognito_user_pool_client.user_pool_client.id
 
     css        = file("${path.module}/ui/client.css")
-    image_file = filebase64("${path.module}/ui/logo.png")
+    image_file = filebase64("${path.module}/ui/logo-white.png")
 
     user_pool_id = aws_cognito_user_pool_domain.user_pool.id
 }
@@ -145,9 +145,9 @@ resource "aws_cognito_user_pool_ui_customization" "cp_cognito" {
     client_id = aws_cognito_user_pool_client.user_pool_client.id
 
     css        = ".label-customizable {font-weight: 400;}"
-    image_file = filebase64("logo.png")
+    image_file = filebase64("logo-white.png")
 
     # Refer to the aws_cognito_user_pool_domain resource's
     # user_pool_id attribute to ensure it is in an 'Active' state
-    user_pool_id = aws_cognito_user_pool_domain.example.user_pool_id
+    user_pool_id = aws_cognito_user_pool_domain.user_pool.user_pool_id
 }
