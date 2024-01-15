@@ -1,7 +1,7 @@
 variable "user_pool_domain" {}
 variable "app_domain" {}
 
-module "route53" {
+module "cp-route53" {
     source = "./route53"
 
     user_pool_domain = var.user_pool_domain
