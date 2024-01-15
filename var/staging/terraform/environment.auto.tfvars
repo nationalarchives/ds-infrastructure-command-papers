@@ -5,7 +5,7 @@
 default_tags = {
     owner       = "Digital Services"
     cost_centre = "53"
-    environment = "dev"
+    environment = "staging"
     region      = "eu-west-2"
     account     = "tna-ds-staging"
     terraform   = "true"

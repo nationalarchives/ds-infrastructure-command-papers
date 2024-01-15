@@ -5,5 +5,5 @@ module "cp_asm" {
     cognito_user_pool_client_secret = module.cp-cognito.cognito_client_secret
     cognito_client_pool_id = module.cp-cognito.cognito_client_id
 
-    tags = var.tags
+    tags = var.default_tags
 }
