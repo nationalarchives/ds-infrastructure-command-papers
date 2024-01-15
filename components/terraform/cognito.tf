@@ -16,5 +16,4 @@ module "cp-cognito" {
     certificate_arn = data.aws_ssm_parameter.cp_certificate_arn.value
 
     tags = var.default_tags
-    tags = var.default_tags
 }
