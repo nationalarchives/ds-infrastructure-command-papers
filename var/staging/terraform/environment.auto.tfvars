@@ -12,4 +12,4 @@ default_tags = {
 }
 
 user_pool_domain = "staging-auth-commandpapers.nationalarchives.gov.uk"
-app_url          = "staging-commandpapers.nationalarchives.gov.uk"
+app_domain       = "staging-commandpapers.nationalarchives.gov.uk"
