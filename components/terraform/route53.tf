@@ -7,5 +7,6 @@ module "cp-route53" {
     user_pool_domain = var.user_pool_domain
     app_domain       = var.app_domain
 
-    user_pool_endpoint = module.cp-cognito.cognito_endpoint
+    cloudfront_distribution = module.cp-cognito.cognito_cloudfront_distribution
+    cloudfront_distribution_zone_id = module.cp-cognito.cognito_cloudfront_distribution_zone_id
 }

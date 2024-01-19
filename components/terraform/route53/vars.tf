@@ -1,4 +1,5 @@
 variable "user_pool_domain" {}
 variable "app_domain" {}
 
-variable "user_pool_endpoint" {}
+variable "cloudfront_distribution" {}
+variable "cloudfront_distribution_zone_id" {}

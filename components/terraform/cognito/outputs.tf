@@ -14,6 +14,10 @@ output "cognito_client_secret" {
     value = aws_cognito_user_pool_client.user_pool_client.client_secret
 }
 
-output "cognito_endpoint" {
-    value = aws_cognito_user_pool.cognito_user_pool.endpoint
+output "cognito_cloudfront_distribution" {
+    value = aws_cognito_user_pool_domain.user_pool.cloudfront_distribution
+}
+
+output "cognito_cloudfront_distribution_zone_id" {
+    value = aws_cognito_user_pool_domain.user_pool.cloudfront_distribution_zone_id
 }

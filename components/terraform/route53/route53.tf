@@ -7,9 +7,12 @@ resource "aws_route53_record" "user_pool" {
     name    = var.user_pool_domain
     type    = "A"
     ttl     = 300
-    records = [
-        var.user_pool_endpoint
-    ]
+    alias {
+        evaluate_target_health = false
+
+        name    = cloudfront_distribution
+        zone_id = cloudfront_distribution_zone_id
+    }
 }
 
 resource "aws_route53_zone" "app" {
