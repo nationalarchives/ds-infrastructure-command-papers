@@ -10,8 +10,8 @@ resource "aws_route53_record" "user_pool" {
     alias {
         evaluate_target_health = false
 
-        name    = cloudfront_distribution
-        zone_id = cloudfront_distribution_zone_id
+        name    = var.cloudfront_distribution
+        zone_id = var.cloudfront_distribution_zone_id
     }
 }
 
