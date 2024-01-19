@@ -10,6 +10,8 @@ module "cp-cognito" {
     commandpapers_callback_url = var.commandpapers_callback_url
     commandpapers_logout_url   = var.commandpapers_logout_url
 
+    user_pool_domain = var.user_pool_domain
+
     ses_sysdev_arn   = module.cp-ses.ses_arn
     ses_sysdev_email = module.cp-ses.ses_email_address
 

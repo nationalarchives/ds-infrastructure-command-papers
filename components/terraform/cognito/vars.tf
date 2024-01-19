@@ -3,6 +3,8 @@ variable "tags" {}
 variable "cognito_user_pool_name" {}
 variable "user_pool_client_name" {}
 
+variable "user_pool_domain" {}
+
 variable "commandpapers_callback_url" {}
 variable "commandpapers_logout_url" {}
 

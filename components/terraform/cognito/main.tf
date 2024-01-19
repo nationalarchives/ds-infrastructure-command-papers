@@ -65,7 +65,7 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
 
 resource "aws_cognito_user_pool_domain" "user_pool" {
     certificate_arn = var.certificate_arn
-    domain       = var.cognito_user_pool_name
+    domain       = var.user_pool_domain
     user_pool_id = aws_cognito_user_pool.cognito_user_pool.id
 }
 
@@ -75,7 +75,7 @@ resource "aws_cognito_user_pool_ui_customization" "user_pool_ui" {
     css        = file("${path.module}/ui/client.css")
     image_file = filebase64("${path.module}/ui/logo-white.png")
 
-    user_pool_id = aws_cognito_user_pool_domain.user_pool.id
+    user_pool_id = aws_cognito_user_pool_domain.user_pool.user_pool_id
 }
 
 resource "aws_cognito_user_pool_client" "user_pool_client" {
