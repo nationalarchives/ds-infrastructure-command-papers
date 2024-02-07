@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:ListSecrets"
+      ],
+      "Effect": "Allow",
+      "Resource": ["arn:aws:secretsmanager:eu-west-2:*:secret:/command-papers/mysql-*",
+		   "arn:aws:secretsmanager:eu-west-2:*:secret:/command-papers/cognito-*"]
+    },
+    {
+      "Action": [
+		"logs:CreateLogStream",
+		"logs:DescribeLogStreams",
+		"logs:DescribeLogGroups",
+		"logs:PutLogEvents",
+		"logs:GetLogEvents",
+		"logs:PutRetentionPolicy"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+		"ssm:PutParameter", 
+		"ssm:GetParametersByPath"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": ["cognito-idp:*"],
+      "Effect": "Allow",
+      "Resource": ["arn:aws:cognito-idp:eu-west-2:*:userpool/eu-west-2_*"]
+    },
+    {
+        "Action": [
+            "ses:SendRawEmail",
+            "ses:SendEmail"
+        ],
+        "Effect": "Allow",
+        "Resource": "*"
+    }
+  ]
+}
