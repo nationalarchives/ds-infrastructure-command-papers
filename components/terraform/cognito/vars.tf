@@ -12,3 +12,5 @@ variable "ses_sysdev_arn" {}
 variable "ses_sysdev_email" {}
 
 variable "certificate_arn" {}
+
+variable "account_id" {}

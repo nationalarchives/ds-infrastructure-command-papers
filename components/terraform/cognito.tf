@@ -17,5 +17,7 @@ module "cp-cognito" {
 
     certificate_arn = data.aws_ssm_parameter.cp_certificate_arn.value
 
+    account_id = data.aws_caller_identity.current.account_id
+
     tags = var.default_tags
 }
