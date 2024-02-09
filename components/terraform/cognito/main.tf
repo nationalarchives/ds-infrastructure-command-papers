@@ -91,13 +91,8 @@ resource "aws_cognito_user_pool_client" "user_pool_client" {
 
     allowed_oauth_flows_user_pool_client = true
 
-    callback_urls = [
-        var.commandpapers_callback_url
-    ]
-
-    logout_urls = [
-        var.commandpapers_logout_url
-    ]
+    callback_urls = var.commandpapers_callback_url
+    logout_urls   = var.commandpapers_logout_url
 
     supported_identity_providers = [
         "COGNITO"
