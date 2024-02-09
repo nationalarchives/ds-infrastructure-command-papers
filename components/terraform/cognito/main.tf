@@ -12,7 +12,7 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
     }
 
     lambda_config {
-        pre_sign_up = "arn:aws:lambda:eu-west-2:${account_id}:function:cognito-signup-validation"
+        pre_sign_up = "arn:aws:lambda:eu-west-2:${var.account_id}:function:cognito-signup-validation"
     }
 
     password_policy {
