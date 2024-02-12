@@ -38,7 +38,7 @@ resource "aws_route53_record" "local" {
     zone_id = var.local_zone_id
     name    = var.local_api_domain
     type    = "CNAME"
-    ttl     = 5
+    ttl     = 300
 
     records = [
         var.local_api_target,
