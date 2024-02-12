@@ -17,3 +17,30 @@ resource "aws_route53_record" "user_pool" {
 resource "aws_route53_zone" "app" {
     name = var.app_domain
 }
+
+resource "aws_route53_zone" "site" {
+    name = var.site_domain
+}
+
+resource "aws_route53_record" "site" {
+    zone_id = aws_route53_zone.site.zone_id
+    name    = var.site_domain
+    type    = "A"
+    alias {
+        evaluate_target_health = false
+
+        name    = var.site_target
+        zone_id = var.lb_zone_id
+    }
+}
+
+resource "aws_route53_record" "local" {
+    zone_id = var.local_zone_id
+    name    = var.local_api_domain
+    type    = "CNAME"
+    ttl     = 5
+
+    records = [
+        var.local_api_target,
+    ]
+}
