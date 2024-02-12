@@ -1,4 +1,5 @@
 resource "aws_ecr_repository" "ecr_command_paper_api" {
+  provider             = "intersite"
   name                 = "command-paper-api"
   image_tag_mutability = "IMMUTABLE"
 
@@ -13,6 +14,7 @@ resource "aws_ecr_repository_policy" "ecr_command_paper_api_policy" {
 }
 
 resource "aws_ecr_repository" "ecr_command_paper_web" {
+  provider             = "intersite"
   name                 = "command-paper-web"
   image_tag_mutability = "IMMUTABLE"
 
