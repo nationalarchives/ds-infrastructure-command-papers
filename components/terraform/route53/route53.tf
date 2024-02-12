@@ -27,7 +27,7 @@ resource "aws_route53_record" "site" {
     name    = var.site_domain
     type    = "A"
     alias {
-        evaluate_target_health = false
+        evaluate_target_health = true
 
         name    = var.site_target
         zone_id = var.lb_zone_id
