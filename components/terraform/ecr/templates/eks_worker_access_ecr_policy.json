@@ -1,0 +1,26 @@
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "EKS-access-4-dev-staging-live",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::337670467269:role/eks-worker-node-role",
+          "arn:aws:iam::968803923593:role/eks-worker-node-role",
+          "arn:aws:iam::846769538626:role/eks-worker-node-role"
+        ]
+      },
+      "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:BatchGetImage",
+        "ecr:DescribeImages",
+        "ecr:DescribeRepositories",
+        "ecr:GetAuthorizationToken",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:GetRepositoryPolicy",
+        "ecr:ListImages"
+      ]
+    }
+  ]
+}
