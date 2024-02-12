@@ -1,0 +1,30 @@
+{
+    "Statement": [
+        {
+            "Action": [
+                "ecr:BatchGetImage",
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:CompleteLayerUpload",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:InitiateLayerUpload",
+                "ecr:PutImage",
+                "ecr:UploadLayerPart"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:ecr:eu-west-2:500447081210:repository/command-paper-web",
+                "arn:aws:ecr:eu-west-2:500447081210:repository/command-paper-api"
+            ],
+            "Sid": "AllowPushPull"
+        },
+        {
+            "Action": "ecr:GetAuthorizationToken",
+            "Effect": "Allow",
+            "Resource": [
+                "*"
+            ],
+            "Sid": "GetToken"
+        }
+    ],
+    "Version": "2012-10-17"
+}
