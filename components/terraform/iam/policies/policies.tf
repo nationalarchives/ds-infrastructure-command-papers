@@ -1,11 +1,3 @@
-terraform {
-    required_providers {
-        aws = {
-            configuration_aliases = [aws.intersite, aws.environment]
-        }
-    }
-}
-
 # allow Commandpaper pods to access AWS resources
 #
 resource "aws_iam_policy" "command_papers_k8s_resource_access_policy" {

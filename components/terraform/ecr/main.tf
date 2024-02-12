@@ -1,11 +1,3 @@
-terraform {
-    required_providers {
-        aws = {
-            configuration_aliases = [aws.intersite, aws.environment]
-        }
-    }
-}
-
 resource "aws_ecr_repository" "ecr_command_paper_api" {
     provider             = aws.intersite
     name                 = "command-paper-api"

@@ -1,11 +1,3 @@
-terraform {
-    required_providers {
-        aws = {
-            configuration_aliases = [aws.intersite, aws.environment]
-        }
-    }
-}
-
 variable "command_papers_github_ecr_policy_arn" {}
 
 resource "aws_iam_role" "command_papers_github_ecr_assume_role" {
