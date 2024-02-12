@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    aws = {
+      configuration_aliases = [ aws.intersite, aws.environment ]
+    }
+  }
+}
+
 module "policies" {
     source = "./iam/policies"
 }
