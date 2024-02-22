@@ -3,3 +3,4 @@ data "aws_ssm_parameter" "cp_certificate_arn" {
 }
 
 data "aws_caller_identity" "current" {}
+

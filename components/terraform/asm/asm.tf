@@ -1,5 +1,5 @@
 resource "aws_secretsmanager_secret" "cognito" {
-    name        = "/command-papers/cognito"
+    name        = "application/command-papers/cognito"
     description = "CommandPapers web - Cognito credentials"
 
     tags = merge( var.tags, {
