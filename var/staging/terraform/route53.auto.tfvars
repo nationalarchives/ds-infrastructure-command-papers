@@ -4,8 +4,8 @@
 
 site_domain = "staging-commandpapers.nationalarchives.gov.uk"
 site_target = ""
-lb_zone_id = ""
+lb_zone_id = "temp"
 
 local_zone_id = "Z01866642Z55TMPV5WNYZ"
 local_api_domain = "commandpaper-api.staging.local"
-local_api_target = ""
+local_api_target = "temp"
