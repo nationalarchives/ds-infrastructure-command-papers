@@ -3,7 +3,7 @@
 # lb_zone_id can be extracted when load balancer has been created.
 
 site_domain = "staging-commandpapers.nationalarchives.gov.uk"
-site_target = ""
+site_target = "temp"
 lb_zone_id = "temp"
 
 local_zone_id = "Z01866642Z55TMPV5WNYZ"
