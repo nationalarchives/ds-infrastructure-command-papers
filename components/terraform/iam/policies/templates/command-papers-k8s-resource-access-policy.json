@@ -7,8 +7,8 @@
         "secretsmanager:ListSecrets"
       ],
       "Effect": "Allow",
-      "Resource": ["arn:aws:secretsmanager:eu-west-2:*:secret:/command-papers/mysql-*",
-		   "arn:aws:secretsmanager:eu-west-2:*:secret:/command-papers/cognito-*"]
+      "Resource": ["arn:aws:secretsmanager:eu-west-2:*:secret:application/command-papers/mysql-*",
+		   "arn:aws:secretsmanager:eu-west-2:*:secret:application/command-papers/cognito-*"]
     },
     {
       "Action": [
