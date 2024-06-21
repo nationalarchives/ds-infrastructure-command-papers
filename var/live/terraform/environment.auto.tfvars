@@ -12,4 +12,4 @@ default_tags = {
 }
 
 user_pool_domain = "auth-commandpapers.nationalarchives.gov.uk"
-app_domain       = "commandpapers.nationalarchives.gov.uk"
+app_domain       = "cp-test.nationalarchives.gov.uk"
