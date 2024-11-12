@@ -8,6 +8,10 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
     mfa_configuration          = "ON"
     sms_authentication_message = "Your code is {####}"
 
+    software_token_mfa_configuration {
+        enabled = true
+    }
+
     email_configuration {
         source_arn             = var.ses_sysdev_arn
         reply_to_email_address = var.ses_sysdev_email
