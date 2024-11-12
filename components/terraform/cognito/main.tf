@@ -7,6 +7,7 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
 
     mfa_configuration          = "ON"
     sms_authentication_message = "Your code is {####}"
+    email_authentication_message = "Your code is {####}"
 
     software_token_mfa_configuration {
         enabled = false
