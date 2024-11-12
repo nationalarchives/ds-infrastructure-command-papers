@@ -28,6 +28,10 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
         temporary_password_validity_days = 7
     }
 
+    user_pool_add_ons {
+        advanced_security_mode = "AUDIT"
+    }
+
     schema {
         attribute_data_type      = "String"
         developer_only_attribute = false
