@@ -1,6 +1,12 @@
 resource "aws_cognito_user_pool" "cognito_user_pool" {
     name = var.cognito_user_pool_name
 
+    mfa_configuration = "ON"
+
+    email_mfa_configuration {
+        message = "Your code is {####}"
+    }
+
     auto_verified_attributes = [
         "email",
     ]
