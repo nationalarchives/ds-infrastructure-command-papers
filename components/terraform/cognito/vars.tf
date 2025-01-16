@@ -1,5 +1,6 @@
 variable "tags" {}
 
+variable "user_pool_tier" {}
 variable "cognito_user_pool_name" {}
 variable "user_pool_client_name" {}
 

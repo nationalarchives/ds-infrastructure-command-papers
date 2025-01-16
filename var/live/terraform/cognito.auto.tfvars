@@ -1,3 +1,5 @@
+user_pool_tier = "PLUS"
+
 commandpapers_callback_url = [
 #    "https://commandpapers.nationalarchives.gov.uk/signin-oidc",
     "https://cp-test.nationalarchives.gov.uk/signin-oidc",
