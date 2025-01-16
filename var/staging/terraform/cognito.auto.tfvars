@@ -1,3 +1,5 @@
+user_pool_tier = "PLUS"
+
 commandpapers_callback_url = [
     "https://staging-commandpapers.nationalarchives.gov.uk/signin-oidc",
 ]

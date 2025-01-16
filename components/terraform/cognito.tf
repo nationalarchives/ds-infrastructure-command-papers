@@ -1,9 +1,11 @@
+variable "user_pool_tier" {}
 variable "commandpapers_callback_url" {}
 variable "commandpapers_logout_url" {}
 
 module "cp-cognito" {
     source = "./cognito"
 
+    user_pool_tier = var.user_pool_tier
     cognito_user_pool_name = "commandpapers-cognito-user-pool"
     user_pool_client_name = "commandpapers-client"
 

@@ -1,6 +1,7 @@
 resource "aws_cognito_user_pool" "cognito_user_pool" {
     name = var.cognito_user_pool_name
 
+    user_pool_tier    = "PLUS"
     mfa_configuration = "ON"
 
     email_mfa_configuration {
@@ -70,7 +71,7 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
         }
     }
 
-    tags = merge( var.tags, {
+    tags = merge(var.tags, {
         "Name" = var.cognito_user_pool_name
     })
 }
@@ -84,7 +85,7 @@ resource "aws_cognito_user_pool_domain" "user_pool" {
 resource "aws_cognito_user_pool_ui_customization" "user_pool_ui" {
     client_id = aws_cognito_user_pool_client.user_pool_client.id
 
-    css        = file("${path.module}/ui/client.css")
+    css = file("${path.module}/ui/client.css")
     image_file = filebase64("${path.module}/ui/logo-white.png")
 
     user_pool_id = aws_cognito_user_pool_domain.user_pool.user_pool_id
@@ -151,7 +152,7 @@ resource "aws_cognito_user_group" "tna_group" {
 resource "aws_cognito_user_pool_ui_customization" "cp_cognito" {
     client_id = aws_cognito_user_pool_client.user_pool_client.id
 
-    css        = file("${path.module}/ui/client.css")
+    css = file("${path.module}/ui/client.css")
     image_file = filebase64("${path.module}/ui/logo-white.png")
 
     # Refer to the aws_cognito_user_pool_domain resource's
