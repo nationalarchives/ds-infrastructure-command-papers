@@ -4,7 +4,9 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
     user_pool_tier    = "PLUS"
     mfa_configuration = "ON"
 
-    enabled_mfas = ["SOFTWARE_TOKEN"]
+    software_token_mfa_configuration {
+        enabled = true
+    }
 
     auto_verified_attributes = [
         "email",
