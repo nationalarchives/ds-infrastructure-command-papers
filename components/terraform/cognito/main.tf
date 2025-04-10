@@ -4,8 +4,8 @@ resource "aws_cognito_user_pool" "cognito_user_pool" {
     user_pool_tier    = "PLUS"
     mfa_configuration = "ON"
 
-    email_mfa_configuration {
-        message = "Your code is {####}"
+    software_token_mfa_configuration {
+        enabled = true
     }
 
     auto_verified_attributes = [
